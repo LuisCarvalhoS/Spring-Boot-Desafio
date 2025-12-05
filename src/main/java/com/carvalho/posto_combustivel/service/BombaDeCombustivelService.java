@@ -30,12 +30,11 @@ public class BombaDeCombustivelService {
     }
 
     @Transactional
-    private void deletarBombaCombustivel(Integer id) {
+    public void deletarBombaCombustivel(Integer id) {
         bombaDeCombustivelRepository.deleteById(id);
     }
 
-    private void alterarBombaDeCombustivel(Integer id, BombasDeCombustivel bombasDeCombustivel) {
-
+    public void alterarBombasDeCombustivel(Integer id, BombasDeCombustivel bombasDeCombustivel) {
         BombasDeCombustivel bomba = buscarBombasDeCombustivelPorId(id);
         bombasDeCombustivel.setId(bomba.getId());
         bombaDeCombustivelRepository.save(bombasDeCombustivel);
